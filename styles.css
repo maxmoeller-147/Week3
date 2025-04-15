@@ -4,6 +4,11 @@
 }
 
 
+body{
+    overflow: hidden;
+}
+
+
 .bubbles{
     width: 100dvw;
     height: 100dvh;
@@ -12,15 +17,35 @@
 
 
 .bubble {
+    /* aspect-ratio: 1; */
     width: 10dvh;
     height: 10dvh;
     background-color: blue;
     transition: background-color 1s; transform: 1s;
     border-radius: 50%;
+    animation: animationNameGoesHere 5s infinite linear;
+    position: absolute;
+}
+
+.bubble:nth-child(2){
+    animation: animationNameGoesHere 10s infinite linear
 }
 
 
 .bubble:hover {
     background-color: steelblue;
     transform: scale(2);
+}
+
+
+@keyframes animationNameGoesHere {
+    0% {
+        bottom: -1000px;
+        transform: translateY(0);
+    }
+    
+    100% {
+        bottom: 3000px;
+        transform: translateY(1000px);
+    }
 }
